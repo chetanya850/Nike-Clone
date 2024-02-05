@@ -87,77 +87,77 @@ const data = [
 
 const shoesss = document.getElementById('shoes')
 
-data.forEach(item => {
-  // console.log(shoesss)
-  newDiv = document.createElement('div')
+// data.forEach(item => {
+//   // console.log(shoesss)
+//   newDiv = document.createElement('div')
 
-  newDiv.innerHTML = `
+//   newDiv.innerHTML = `
 
-<div  class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
-        <img
-          class="w-full"
-          src="${item.imageURL}"
-          alt="Sunset in the mountains"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">${item.name}</div>
-          <p class="text-gray-700 text-base">$
-${item.price}
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >${item.category}</span
-          >
-                    <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >${item.gender}</span
-          >
-        </div>
-      </div>`
+// <div  class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
+//         <img
+//           class="w-full"
+//           src="${item.imageURL}"
+//           alt="Sunset in the mountains"
+//         />
+//         <div class="px-6 py-4">
+//           <div class="font-bold text-xl mb-2">${item.name}</div>
+//           <p class="text-gray-700 text-base">$
+// ${item.price}
+//           </p>
+//         </div>
+//         <div class="px-6 pt-4 pb-2">
+//           <span
+//             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+//             >${item.category}</span
+//           >
+//                     <span
+//             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+//             >${item.gender}</span
+//           >
+//         </div>
+//       </div>`
 
-  shoesss.appendChild(newDiv)
-})
+//   shoesss.appendChild(newDiv)
+// })
 
-const searchData = () => {
-  let sd = document.getElementById('search_data')
-  let Show_div = ''
-  console.log(sd)
+// const searchData = () => {
+//   let sd = document.getElementById('search_data')
+//   let Show_div = ''
+//   console.log(sd)
 
-  for (let i = 0; i < data.length; i++) {
-    if (sd == '') {
-      console.log(data)
-      location.replace('./index.html')
-    } else if (data[i].name.toLowerCase().includes(sd)) {
-      Show_div += `
-<div  class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
-        <img
-          class="w-full"
-          src="${item.imageURL}"
-          alt="Sunset in the mountains"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">${item.name}</div>
-          <p class="text-gray-700 text-base">$
-${item.price}
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >${item.category}</span
-          >
-                    <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >${item.gender}</span
-          >
-        </div>
-      </div>`
-    }
-  }
-  document.getElementById('shoes').innerHTML = Show_div
-}
+//   for (let i = 0; i < data.length; i++) {
+//     if (sd == '') {
+//       console.log(data)
+//       location.replace('./index.html')
+//     } else if (data[i].name.toLowerCase().includes(sd)) {
+//       Show_div += `
+// <div  class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
+//         <img
+//           class="w-full"
+//           src="${item.imageURL}"
+//           alt="Sunset in the mountains"
+//         />
+//         <div class="px-6 py-4">
+//           <div class="font-bold text-xl mb-2">${item.name}</div>
+//           <p class="text-gray-700 text-base">$
+// ${item.price}
+//           </p>
+//         </div>
+//         <div class="px-6 pt-4 pb-2">
+//           <span
+//             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+//             >${item.category}</span
+//           >
+//                     <span
+//             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+//             >${item.gender}</span
+//           >
+//         </div>
+//       </div>`
+//     }
+//   }
+//   document.getElementById('shoes').innerHTML = Show_div
+// }
 // element = ` <div class="max-w-sm rounded overflow-hidden shadow-lg">
 //         <img
 //           class="w-full"
@@ -190,64 +190,62 @@ ${item.price}
 
 // shoesss.append(element)
 
+const searchData = () => {
+  let sd = document.getElementById('search_data').value.toLowerCase()
+  let showDiv = ''
 
+  console.log(sd)
+  if (sd === '') {
+    showAllData()
+  } else {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].name.toLowerCase().includes(sd)) {
+        showDiv += `
+          <div class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
+            <img class="w-full" src="${data[i].imageURL}" alt="Product Image" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">${data[i].name}</div>
+              <p class="text-gray-700 text-base">$${data[i].price}</p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                ${data[i].category}
+              </span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                ${data[i].gender}
+              </span>
+            </div>
+          </div>`
+      }
+    }
+    document.getElementById('shoes').innerHTML = showDiv
+  }
+}
 
-// const searchData = () => {
-//   let sd = document.getElementById('search_data').value.toLowerCase();
-//   let showDiv = '';
+const showAllData = () => {
+  let showDiv = ''
 
-//   console.log(sd)
-//   if (sd === '') {
-//     showAllData();
-//   } else {
-//     for (let i = 0; i < data.length; i++) {
-//       if (data[i].name.toLowerCase().includes(sd)) {
-//         showDiv += `
-//           <div class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
-//             <img class="w-full" src="${data[i].imageURL}" alt="Product Image" />
-//             <div class="px-6 py-4">
-//               <div class="font-bold text-xl mb-2">${data[i].name}</div>
-//               <p class="text-gray-700 text-base">$${data[i].price}</p>
-//             </div>
-//             <div class="px-6 pt-4 pb-2">
-//               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-//                 ${data[i].category}
-//               </span>
-//               <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-//                 ${data[i].gender}
-//               </span>
-//             </div>
-//           </div>`;
-//       }
-//     }
-//     document.getElementById('shoes').innerHTML = showDiv;
-//   }
-// };
+  data.forEach(item => {
+    showDiv += `
+      <div class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
+        <img class="w-full" src="${item.imageURL}" alt="Product Image" />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">${item.name}</div>
+          <p class="text-gray-700 text-base">$${item.price}</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+            ${item.category}
+          </span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+            ${item.gender}
+          </span>
+        </div>
+      </div>`
+  })
 
-// const showAllData = () => {
-//   let showDiv = '';
+  document.getElementById('shoes').innerHTML = showDiv
+}
 
-//   data.forEach((item) => {
-//     showDiv += `
-//       <div class="max-w-sm card rounded overflow-hidden shadow-lg my-2 mx-2">
-//         <img class="w-full" src="${item.imageURL}" alt="Product Image" />
-//         <div class="px-6 py-4">
-//           <div class="font-bold text-xl mb-2">${item.name}</div>
-//           <p class="text-gray-700 text-base">$${item.price}</p>
-//         </div>
-//         <div class="px-6 pt-4 pb-2">
-//           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-//             ${item.category}
-//           </span>
-//           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-//             ${item.gender}
-//           </span>
-//         </div>
-//       </div>`;
-//   });
-
-//   document.getElementById('shoes').innerHTML = showDiv;
-// };
-
-// // Initial display of all data
-// showAllData();
+// Initial display of all data
+showAllData()
