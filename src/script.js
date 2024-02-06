@@ -194,8 +194,11 @@ const searchData = () => {
   let sd = document.getElementById('search_data').value.toLowerCase()
   let showDiv = ''
 
+  document.getElementById('firstimage').hidden = true
+
   console.log(sd)
   if (sd === '') {
+    document.getElementById('firstimage').hidden = false
     showAllData()
   } else {
     for (let i = 0; i < data.length; i++) {

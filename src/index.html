@@ -4,8 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./output.css" />
-
     <title>Document</title>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -16,7 +34,6 @@
             alt="logo"
             class="w-14 m-2"
           />
-          <!-- <img src="./images/nike-4-logo-svg-vector.svg" alt="logo" /> -->
         </div>
         <ul class="flex space-x-4 mt-5 align-middle mr-5">
           <li class="cursor-pointer">Men</li>
@@ -35,123 +52,91 @@
         />
       </nav>
     </header>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            class="object-cover w-full h-96"
+            src="https://cdn.pixabay.com/photo/2015/07/27/18/53/jump-863058_1280.jpg"
+            alt="image"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="object-cover w-full h-96"
+            src="https://c02.purpledshub.com/uploads/sites/41/2021/08/Alamy_2F3Y8J0-crop-ff47efc.jpg?w=1175&webp=1"
+            alt="image"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="object-cover w-full h-96"
+            src="https://cdn.runrepeat.com/storage/gallery/buying_guide_primary/17/17-best-nike-running-shoes-15275034-1440.jpg"
+            alt="image"
+          />
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
 
-    <img
-      src="https://cdn.pixabay.com/photo/2015/07/27/18/53/jump-863058_1280.jpg"
-      alt="neymar"
-      class="w-full"
-    />
-
+    <!-- Card Section -->
     <div
       id="shoes"
       class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ml-10"
     >
-      <!-- <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img
-          class="w-full"
-          src="./images/revolution-7-road-running-shoes-dC34tK.png"
-          alt="Sunset in the mountains"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-          <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#photography</span
-          >
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#travel</span
-          >
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#winter</span
-          >
-        </div>
-      </div>
-      <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img
-          class="w-full"
-          src="./images/revolution-7-road-running-shoes-dC34tK.png"
-          alt="Sunset in the mountains"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-          <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#photography</span
-          >
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#travel</span
-          >
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#winter</span
-          >
-        </div>
-      </div>
-      <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img
-          class="w-full"
-          src="./images/revolution-7-road-running-shoes-dC34tK.png"
-          alt="Sunset in the mountains"
-        />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-          <p class="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#photography</span
-          >
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#travel</span
-          >
-          <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-            >#winter</span
-          >
-        </div>
-      </div> -->
+      <!-- Cards -->
     </div>
 
-    <div class="flex flex-row justify-between m-5">
-      <img
-        src="https://cdn.pixabay.com/photo/2015/04/20/17/39/man-731900_960_720.jpg"
-        alt="image"
+    <h1 class="text-4xl">Speacial Offers</h1>
+
+    <video width="100%" autoplay muted loop>
+      <source
+        src="https://cdn.runrepeat.com/storage/uploads/Buying%20Guides/how-we-test-running.mp4"
+        type="video/mp4"
       />
-      <div class="flex-col">
-        <h2>Why Choose Us?</h2>
-        <br />
-        <p class="justify-between">
-          Nike prioritizes comfort and fit in every design. Meticulous attention
-          to ergonomics and biomechanics ensures that each pair of Nike shoes
-          offers not only exceptional performance but also an unparalleled level
-          of comfort. Experience the perfect blend of support and ease, tailored
-          to the natural movement of your feet.
-        </p>
-      </div>
+      <source src="movie.ogg" type="video/ogg" />
+    </video>
+    <!-- First Image  -->
+    <div id="firstimage" class="container mx-auto">
+      <img
+        src="https://ichef.bbci.co.uk/news/976/cpsprodpb/B9FF/production/_117751674_satan-shoes1.jpg.webp"
+        alt="neymar"
+        class="w-full h-12"
+      />
     </div>
+
+    <footer
+      class="page-footer shadow bg-gray-400 flex flex-row align-middle justify-between"
+    >
+      <div class="flex">
+        <img src="./images/nike-logo-white.png" width="80" alt="i" />
+      </div>
+      <div class="flex flex-col">
+        <ul class="flex">
+          <li class="flex flex-row m-5">
+            <img src="./images/download.png" width="20" alt="" /> Twitter
+          </li>
+          <li class="flex flex-row m-5">
+            <img src="./images/facebook-circle.svg" width="20" alt="" />
+            Facebook
+          </li>
+          <li class="flex flex-row m-5">
+            <img src="./images/instagram-logo-facebook.svg" width="20" alt="" />
+            Instagram
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      })
+    </script>
 
     <script src="script.js"></script>
   </body>
