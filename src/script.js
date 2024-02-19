@@ -1,7 +1,7 @@
 const data = [
   {
     id: 1,
-    name: 'Nike React Infinity Run Flyknit',
+    name: 'Nike React Infinity Run Flyknit1234',
     brand: 'NIKE',
     gender: 'MEN',
     category: 'RUNNING',
